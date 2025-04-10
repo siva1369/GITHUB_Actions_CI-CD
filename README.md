@@ -161,7 +161,7 @@ terraform -version
 
 clone the repository of terraform files
 
-git clone https://github.com/jaiswaladi246/EKS-Terraform
+git clone https://github.com/siva1369/K8S-EKS--Terraform.git
 
 cd terraform
 
