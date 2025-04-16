@@ -8,7 +8,7 @@ on:
 jobs:
   # 1️⃣ Compile the Java project using Maven
   compile:
-    runs-on: self-hosted or ubuntu-latest
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v4  # Checkout source code
     - name: Set up JDK 17
@@ -22,7 +22,7 @@ jobs:
 
   # 2️⃣ Security scanning using Trivy and Gitleaks
   security-check:
-    runs-on: self-hosted or ubuntu-latest
+    runs-on: self-hosted
     needs: compile
     steps:
     - uses: actions/checkout@v4
@@ -42,7 +42,7 @@ jobs:
 
   # 3️⃣ Run unit tests
   test:
-    runs-on: self-hosted or ubuntu-latest
+    runs-on: self-hosted
     needs: security-check
     steps:
     - uses: actions/checkout@v4
@@ -57,7 +57,7 @@ jobs:
 
   # 4️⃣ Build project and scan with SonarQube
   build_project_and_sonar_scan:
-    runs-on: self-hosted or ubuntu-latest
+    runs-on: self-hosted
     needs: test
     steps:
     - uses: actions/checkout@v4
